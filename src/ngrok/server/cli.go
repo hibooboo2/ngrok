@@ -15,11 +15,13 @@ type Options struct {
 	loglevel   string
 }
 
+var defaultServer string
+
 func parseArgs() *Options {
 	httpAddr := flag.String("httpAddr", ":80", "Public address for HTTP connections, empty string to disable")
 	httpsAddr := flag.String("httpsAddr", ":443", "Public address listening for HTTPS connections, emptry string to disable")
 	tunnelAddr := flag.String("tunnelAddr", ":4443", "Public address listening for ngrok client")
-	domain := flag.String("domain", "ngrok.jhrb.us", "Domain where the tunnels are hosted")
+	domain := flag.String("domain", defaultServer, "Domain where the tunnels are hosted")
 	tlsCrt := flag.String("tlsCrt", "", "Path to a TLS certificate file")
 	tlsKey := flag.String("tlsKey", "", "Path to a TLS key file")
 	logto := flag.String("log", "stdout", "Write log messages to this file. 'stdout' and 'none' have special meanings")
