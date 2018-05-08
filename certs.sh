@@ -20,4 +20,4 @@ cp ~/certs/live/${DOMAIN}/fullchain.pem assets/server/tls/snakeoil.crt
 
 cp ~/certs/live/${DOMAIN}/privkey.pem assets/server/tls/snakeoil.key
 
-DOMAIN=${DOMAIN} make all
+DOMAIN=${DOMAIN} make release-all
